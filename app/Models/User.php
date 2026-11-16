@@ -31,7 +31,7 @@ protected $hidden = [
  
     public function orders() 
     { 
-        return $this->hasMany(Order::class); 
+        // return $this->hasMany(Order::class);
     } 
  
     public function isAdmin(): bool 
