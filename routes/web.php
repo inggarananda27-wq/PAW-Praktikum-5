@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
+
 
 Route::get('/', function () {
     return view('welcome');
-});
+}) ->name('shop.index');
 
 Route::middleware('guest')->group(function () { 
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login'); 
@@ -14,3 +18,11 @@ Route::middleware('guest')->group(function () {
 }); 
  
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+
+Route::prefix('admin')->name('admin.')->middleware(['auth','role:admin'])->group(function () { 
+    Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index'); 
+    Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store'); 
+    Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update'); 
+    Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy'); 
+    Route::resource('products', AdminProductController::class)->except('show');
+}); 
