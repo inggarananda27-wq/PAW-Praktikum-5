@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -63,5 +62,4 @@ error">{{ session('error') }}</div>@endif @if($errors->any())<div class="alert e
 @yield('content')</main> 
 </div> 
 </body> 
->>>>>>> milestone/02-master-product
 </html>
