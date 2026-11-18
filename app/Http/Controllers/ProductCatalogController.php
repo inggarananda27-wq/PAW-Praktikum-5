@@ -27,6 +27,8 @@ class ProductCatalogController extends Controller
  'price_desc' => $products->orderByDesc('price'),
  'name' => $products->orderBy('name'),
  default => $products->latest(),
+ };
+
  return view('shop.index', [
  'products' => $products->paginate(12)->withQueryString(),
  'categories' => Category::orderBy('name')->get(),
@@ -38,5 +40,4 @@ class ProductCatalogController extends Controller
  $product->load('category');
  return view('shop.show', compact('product'));
  }
-}
 }
