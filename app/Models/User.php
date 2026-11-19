@@ -29,10 +29,10 @@ protected $hidden = [
         ]; 
     } 
  
-    public function orders() 
-    { 
-        // return $this->hasMany(Order::class);
-    } 
+    public function orders()
+{
+    return $this->hasMany(Order::class);
+}
  
     public function isAdmin(): bool 
     { 
