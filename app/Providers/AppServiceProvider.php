@@ -1,19 +1,37 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers; 
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Pagination\Paginator; // <--- Pastikan namespace ini sudah ditambahkan di atas
+use Illuminate\Pagination\Paginator; 
 
-class AppServiceProvider extends ServiceProvider
-{
-    public function register(): void
-    {
-        //
-    }
+use Illuminate\Support\ServiceProvider; 
 
-    public function boot(): void
-    {
-        Paginator::useTailwind(); // <--- Ubah baris ini
-    }
-}
+class AppServiceProvider extends ServiceProvider 
+
+{ 
+    /** 
+
+     * Register any application services. 
+
+     */ 
+
+    public function register(): void 
+    { 
+
+        // 
+
+    } 
+
+    /** 
+
+     * Bootstrap any application services. 
+
+     */ 
+    public function boot(): void 
+    { 
+
+        Paginator::defaultView('pagination.default'); 
+
+    } 
+
+} 
