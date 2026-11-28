@@ -1,6 +1,6 @@
 $kind: http-request
 description: ""
-url: http://127.0.0.1:8000/api/v1/checkout
+url: https://paw-praktikum-5.vercel.app/api/v1/checkout
 method: POST
 headers:
   Accept: application/json
@@ -26,5 +26,5 @@ body:
 auth:
   type: bearer
   credentials:
-    token: "{{customer_token}}"
+    token: 1|OX4YHvaY6ZJRN9ZrdJXQkl8ydJmjp0osrXwIqlHQ734cab25
 order: 7000

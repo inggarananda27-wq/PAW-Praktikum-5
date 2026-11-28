@@ -1,12 +1,6 @@
 $kind: http-request
 name: http://127.0.0.1:8000/api/v1/products
 description: ""
-url: http://127.0.0.1:8000/api/v1/products?q=mouse&min_price=50000&max_price=500000&ready=1&sort=price_asc
+url: https://paw-praktikum-5.vercel.app/api/v1/products
 method: GET
-queryParams:
-  q: mouse
-  min_price: "50000"
-  max_price: "500000"
-  ready: "1"
-  sort: price_asc
 order: 1000
